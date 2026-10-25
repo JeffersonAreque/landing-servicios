@@ -9,3 +9,7 @@ dist/
 .DS_Store
 .vercel
 __pycache__/
+
+# Skills de terceros: se reinstalan con skills-lock.json
+.claude/skills/
+.claude/settings.local.json
