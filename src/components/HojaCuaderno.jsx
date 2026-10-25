@@ -1,9 +1,12 @@
+import { motion } from 'motion/react'
 import { reservas, mes } from '../data/reservas'
 
 const RENGLONES = 13
 
 // Hoja de cuaderno dibujada: renglones y margen en SVG, letra manuscrita (Kalam).
-export default function HojaCuaderno() {
+// `tinta` (opacidad de la letra) la mueve el hero: la letra se borra mientras la hoja se va detrás del sistema,
+// así nunca asoma un renglón cortado por el borde de la pantalla.
+export default function HojaCuaderno({ tinta }) {
   return (
     <div className="hoja relative w-full bg-papel text-tinta">
       <svg
@@ -18,7 +21,7 @@ export default function HojaCuaderno() {
         <line x1="50" x2="50" y1="0" y2="500" stroke="currentColor" strokeOpacity="0.5" strokeWidth="1.5" />
       </svg>
 
-      <div className="hoja-texto relative">
+      <motion.div style={{ opacity: tinta }} className="hoja-texto relative">
         <p className="text-[1.25em]">Reservas — {mes.nombre}</p>
         <div className="grid grid-cols-[auto_1fr_auto_auto] gap-x-[0.9em]">
           <span className="text-tinta-2">día</span>
@@ -36,7 +39,7 @@ export default function HojaCuaderno() {
           })}
         </div>
         <p className="mt-[9cqw]">Falta cobrar el saldo a Rosa</p>
-      </div>
+      </motion.div>
     </div>
   )
 }

@@ -79,6 +79,8 @@ export default function ProductoHero() {
   const hojaX = useTransform(progreso, [0, 1], ['0%', '-10%'])
   const hojaY = useTransform(progreso, [0, 1], ['0%', '-6%'])
   const hojaEscala = useTransform(progreso, [0, 1], [1, 0.86])
+  // La letra se borra cuando la pantalla ya la cubre casi toda: no queda tinta a medias asomando por los bordes.
+  const hojaTinta = useTransform(progreso, [0.3, 0.7], [1, 0])
   const pantallaOpacidad = useTransform(progreso, [0.1, 0.4], [0, 1])
   const pantallaY = useTransform(progreso, [0, 1], [48, 0])
   const pantallaEscala = useTransform(progreso, [0, 1], [0.96, 1])
@@ -99,9 +101,9 @@ export default function ProductoHero() {
         <motion.div
           aria-hidden={enSistema}
           style={{ rotate: hojaRotar, x: hojaX, y: hojaY, scale: hojaEscala }}
-          className="relative col-start-1 row-start-1 w-[92%] justify-self-center lg:w-[72%] lg:justify-self-end"
+          className="relative col-start-1 row-start-1 w-[92%] justify-self-center md:w-[72%] md:justify-self-end"
         >
-          <HojaCuaderno />
+          <HojaCuaderno tinta={hojaTinta} />
         </motion.div>
 
         <motion.div

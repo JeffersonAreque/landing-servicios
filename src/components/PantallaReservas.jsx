@@ -12,8 +12,9 @@ export default function PantallaReservas({ filasVisibles, reducir }) {
   const ocupadas = reservas.filter((r) => r.estado !== 'Cancelada').length
   const porConfirmar = reservas.filter((r) => r.estado === 'Por confirmar').length
   return (
-    <div data-ui className="flex w-full flex-col rounded-xl bg-noche-2 p-4 text-hueso lg:aspect-[16/10] lg:p-6">
-      <div className="flex items-baseline justify-between gap-4 pb-3 lg:pb-5">
+    // Desde md la pantalla tiene proporción 16:10 para tapar la hoja que queda detrás (si no, su letra asoma cortada)
+    <div data-ui className="flex w-full flex-col rounded-xl bg-noche-2 p-4 text-hueso md:aspect-[16/10] md:p-6">
+      <div className="flex items-baseline justify-between gap-4 pb-3 md:pb-5">
         <p className="font-semibold">Reservas · Tu lodge</p>
         <p className="text-nota text-hueso-2 capitalize">{mes.nombre} 2026</p>
       </div>
