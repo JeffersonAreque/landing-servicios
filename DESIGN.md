@@ -93,9 +93,12 @@ Dos familias, el máximo:
 | Titulares | **Boska** (serif) | Fontshare, gratis para uso comercial | h1, h2, nombres de servicios, pasos y proyectos, frase de cierre, nombre en el footer. Pesos 500 y 700. |
 | Texto | **Onest** (sans) | Google Fonts / `@fontsource/onest` | Párrafos, navegación, botones, datos de la pantalla del sistema. Pesos 400 y 600. |
 
-Las fuentes se sirven **desde el propio proyecto** (archivos `woff2` en `public/fonts/` o el paquete
-`@fontsource`), con `font-display: swap` y precarga solo de Boska 500 y Onest 400. Se instalan en el
-paso de implementación, avisándote antes.
+Las fuentes se sirven **desde el propio proyecto** (archivos `woff2` en `public/fonts/`, solo el
+subconjunto latino), con `font-display: swap` y precarga solo de Boska 500 y Onest 400.
+
+**Excepción: Kalam** (manuscrita, Google Fonts, OFL) se usa **solo dentro del dibujo de la hoja de
+cuaderno del hero**, como "la letra del dueño". Es parte de la imagen, no de la tipografía de la página:
+ningún texto de la página va en Kalam.
 
 ### Escala (cinco tamaños, mobile first)
 
@@ -201,11 +204,13 @@ Las secciones vecinas nunca repiten la misma composición.
 
 ### 1. Hero (noche)
 
-**Escritorio (1440):** el texto ocupa las columnas 1–6 y el producto las 7–12.
-- `<h1>` en dos tamaños y debajo, a 32–48 px, el subtítulo del brief en `texto` y `--hueso`.
+**Escritorio (1440):** el `<h1>` ocupa las 12 columnas (a 112 px "Del cuaderno y el Excel" no entra
+en 6 columnas y debe quedar en una línea). Debajo, el texto ocupa las columnas 1–5 y el producto las 7–12.
+- Debajo del `<h1>`, a 32–48 px, el subtítulo del brief en `texto` y `--hueso`.
 - Después, el botón primario "Escríbeme por WhatsApp" y el secundario "Ver cómo trabajo".
-- **El producto:** la **foto real de una hoja de cuaderno** con reservas escritas a mano, ligeramente
-  girada, y detrás el brillo aguajal. Al hacer scroll, la hoja se aparta y en su lugar aparece la
+- **El producto:** una **hoja de cuaderno dibujada en HTML/CSS** (renglones y margen en SVG, letra
+  manuscrita Kalam, proporción 4:5) con reservas anotadas a mano, ligeramente girada, y detrás el brillo
+  aguajal. Al hacer scroll, la hoja se aparta y en su lugar aparece la
   **pantalla de un sistema de reservas** hecha en HTML (tabla con fecha, huésped, habitación y estado,
   con **los mismos datos** que la hoja). El título de la pantalla es "Reservas · Tu lodge", sin nombres
   de negocios reales.
@@ -283,7 +288,6 @@ Las fotos las tomará Jefferson con el celular. **No se usan fotos de stock ni p
 
 | Foto pendiente | Dónde va | Proporción |
 |---|---|---|
-| Hoja de cuaderno con reservas escritas a mano (datos de ejemplo) | Hero | 4:5 |
 | Jefferson trabajando en su laptop | Sobre mí | 4:5 |
 | Una escena de Puerto Maldonado (río, calle, puerto) | Cierre | 3:2 |
 | Capturas reales de SafePickup, Ojo de Dios y EcoMap (si existen) | Proyectos | 16:10 |

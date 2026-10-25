@@ -1,1 +1,137 @@
 @import "tailwindcss";
+
+/* Fuentes servidas desde public/fonts (solo el subconjunto latino) */
+@font-face {
+  font-family: "Boska";
+  src: url("/fonts/boska-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Boska";
+  src: url("/fonts/boska-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* Onest es variable: un solo archivo cubre 400 y 600 */
+@font-face {
+  font-family: "Onest";
+  src: url("/fonts/onest-var.woff2") format("woff2");
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+/* Kalam: solo dentro del dibujo de la hoja de cuaderno */
+@font-face {
+  font-family: "Kalam";
+  src: url("/fonts/kalam-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-noche: #0D1311;
+  --color-noche-2: #151D1A;
+  --color-hueso: #EEF0EC;
+  --color-hueso-2: #A3ABA6;
+  --color-papel: #F2ECE3;
+  --color-papel-2: #E8E0D4;
+  --color-tinta: #16201C;
+  --color-tinta-2: #4F5A55;
+  --color-aguajal: #1E7A5A;
+  --color-aguajal-hover: #186649;
+  --color-aguajal-claro: #4FC08D;
+  --color-aguajal-claro-hover: #6FD0A3;
+
+  --font-titulo: "Boska", Georgia, serif;
+  --font-texto: "Onest", system-ui, sans-serif;
+  --font-mano: "Kalam", cursive;
+
+  --text-display: clamp(2.75rem, 1.2rem + 6.4vw, 7rem);
+  --text-display--line-height: 0.95;
+  --text-display--letter-spacing: -0.03em;
+  --text-titulo: clamp(2rem, 1.3rem + 2.8vw, 3.75rem);
+  --text-titulo--line-height: 1.05;
+  --text-titulo--letter-spacing: -0.02em;
+  --text-subtitulo: clamp(1.375rem, 1.1rem + 1vw, 2rem);
+  --text-subtitulo--line-height: 1.2;
+  --text-subtitulo--letter-spacing: -0.01em;
+  --text-texto: clamp(1.0625rem, 1rem + 0.25vw, 1.25rem);
+  --text-texto--line-height: 1.55;
+  --text-nota: 0.9375rem;
+  --text-nota--line-height: 1.45;
+
+  /* Ancho máximo del contenido (1344 px) */
+  --container-pagina: 84rem;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-noche);
+  }
+  body {
+    background-color: var(--color-noche);
+    color: var(--color-hueso);
+    font-family: var(--font-texto);
+    font-size: var(--text-texto);
+    line-height: var(--text-texto--line-height);
+    -webkit-font-smoothing: antialiased;
+  }
+  /* Foco visible: 2 px en el acento de la sección, separado 3 px */
+  :focus-visible {
+    outline: 2px solid var(--color-aguajal-claro);
+    outline-offset: 3px;
+  }
+  .bg-papel :focus-visible,
+  .bg-papel-2 :focus-visible {
+    outline-color: var(--color-aguajal);
+  }
+  .bg-aguajal :focus-visible {
+    outline-color: var(--color-papel);
+  }
+}
+
+@layer components {
+  /* Márgenes laterales iguales: 20 / 32 / 48 px, contenido hasta 1344 px */
+  .marco {
+    /* content-box: los 1344 px son del contenido, sin contar los márgenes */
+    box-sizing: content-box;
+    margin-inline: auto;
+    max-width: var(--container-pagina);
+    padding-inline: 1.25rem;
+  }
+  @media (width >= 48rem) {
+    .marco { padding-inline: 2rem; }
+  }
+  @media (width >= 80rem) {
+    .marco { padding-inline: 3rem; }
+  }
+}
+
+/* ---------- Producto del hero ---------- */
+@layer components {
+  /* La hoja escala como un dibujo: letra y renglones en unidades del ancho de la hoja (cqw),
+     así los renglones del SVG y las líneas de texto siempre coinciden. */
+  .hoja {
+    container-type: inline-size;
+    aspect-ratio: 4 / 5;
+  }
+  .hoja-texto {
+    font-family: var(--font-mano);
+    font-size: 4.5cqw;
+    line-height: 9cqw; /* = un renglón (36 de 400 en el viewBox) */
+    padding: 9cqw 6cqw 0 15cqw; /* empieza en el segundo renglón, a la derecha del margen */
+  }
+
+  /* Único brillo de la página (excepción aprobada en DESIGN.md §2) */
+  .brillo {
+    background: radial-gradient( /* taste-skill-ignore: brillo aprobado en DESIGN.md §2 */
+      closest-side,
+      color-mix(in srgb, var(--color-aguajal-claro) 18%, transparent),
+      transparent
+    );
+  }
+}
