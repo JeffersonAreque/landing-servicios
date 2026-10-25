@@ -172,11 +172,32 @@ con dos partes:
   corta y se recorre con scroll.
 - Sin efecto vidrio (blur), sin cápsula flotante y sin línea inferior.
 
+### Logo
+
+**Decidido: logo principal B · Renglón y favicon C · Ventana.**
+
+- **B · Renglón** (logo principal): "JA" en Boska 700 escrito sobre un renglón de cuaderno que termina
+  en un cursor de bloque. Las letras van en el color de texto de la sección (`--hueso` sobre noche,
+  `--tinta` sobre papel) y el renglón y el cursor en el acento (`--aguajal-claro` sobre noche,
+  `--aguajal` sobre papel). Es la idea de la página (del cuaderno al sistema) en un solo signo.
+  - Navegación: logo con el nombre "Jefferson Areque" (36 px de alto en celular, 48 px en escritorio).
+  - "Sobre mí": el monograma grande, en lugar de una foto personal.
+  - Redes (TikTok, LinkedIn): imagen de perfil cuadrada con el monograma centrado, dentro del recorte
+    circular (`diseno/logos/elegido/perfil-redes-*-1080.png`).
+- **C · Ventana** (solo favicon): ficha `--aguajal-claro` con el radio de las pantallas del sistema y
+  "JA" en Onest 600 color `--noche`. Se usa solo en la pestaña del navegador (`public/favicon.svg`) y
+  como icono de iPhone (`public/apple-touch-icon.png`), porque a 16 px se lee mejor que el renglón.
+  No se usa en ninguna otra parte de la página.
+- Todo en SVG con las letras convertidas a trazos (no dependen de que cargue la fuente). En React, el
+  componente `Logo` (`src/components/Logo.jsx`) usa los trazos de `src/components/logoTrazos.js`.
+- Los archivos finales están en `diseno/logos/elegido/`. Las tres propuestas originales siguen en
+  `diseno/logos/` y en `diseno/prueba-logos.html`, como registro.
+
 ### Fotos e imágenes
 
 - Esquinas **rectas** en fotos y capturas. La única excepción son las "pantallas" de sistema
   hechas en HTML, que llevan el radio de una ventana real (12 px).
-- Proporciones fijas: retratos 4:5, escenas 3:2 y capturas de sistema 16:10.
+- Proporciones fijas: escenas 3:2 y capturas de sistema 16:10. No hay retratos: no se usa foto personal.
 - Nunca hay nada encima de un titular.
 
 ### Prohibido (resumen de la skill + CLAUDE.md)
@@ -196,7 +217,7 @@ iguales y paneles falsos de barras grises.
 | 2 | Servicios | Papel | Lista tipo menú |
 | 3 | Cómo trabajo | Papel-2 | Recorrido horizontal |
 | 4 | Proyectos que construí | Noche | Imagen grande alternada |
-| 5 | Sobre mí | Papel | Retrato y texto |
+| 5 | Sobre mí | Papel | Logo y texto |
 | 6 | Cierre / contacto | Aguajal | Campo de color |
 | 7 | Footer | Noche | Nombre a todo el ancho |
 
@@ -261,8 +282,11 @@ Los cuatro servicios, en el orden del brief, presentados **como un menú** en ve
 
 ### 5. Sobre mí (papel)
 
-- En escritorio, el **retrato real** (4:5) va en las columnas 1–5 y el texto en las 7–12. En celular,
-  la foto va arriba a todo el ancho.
+- **Sin foto personal.** En escritorio, el **monograma del logo** va grande en las columnas 1–5, sobre un
+  bloque `--papel-2` de proporción 4:5, y el texto en las 7–12. En celular, el bloque con el monograma va
+  arriba (más bajo, alineado a la izquierda) y el texto debajo.
+- El monograma es un SVG en `--tinta` (y el acento solo si la opción elegida lo lleva). No es una foto:
+  no cuenta como `FotoPendiente`.
 - Texto en primera persona: soy de Puerto Maldonado, estudiante de 8.º ciclo de Ingeniería de
   Sistemas e Informática (UNAMAD), puedo ir en persona dentro de Madre de Dios y trabajo en remoto
   para todo el Perú.
@@ -288,7 +312,6 @@ Las fotos las tomará Jefferson con el celular. **No se usan fotos de stock ni p
 
 | Foto pendiente | Dónde va | Proporción |
 |---|---|---|
-| Jefferson trabajando en su laptop | Sobre mí | 4:5 |
 | Una escena de Puerto Maldonado (río, calle, puerto) | Cierre | 3:2 |
 | Capturas reales de SafePickup, Ojo de Dios y EcoMap (si existen) | Proyectos | 16:10 |
 

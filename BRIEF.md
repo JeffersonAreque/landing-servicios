@@ -65,6 +65,7 @@ Enlaces discretos para quien quiera ver el detalle técnico:
 ## Sobre mí
 Estudiante de 8.º ciclo de Ingeniería de Sistemas e Informática (UNAMAD).
 Va en esta sección, no en el titular.
+La sección va con **mi logo y texto, sin foto personal** (decisión tomada: no uso foto mía en la página).
 
 ## Llamada a la acción
 - Botón principal: "Escríbeme por WhatsApp" → https://wa.me/51910130538

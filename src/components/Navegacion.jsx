@@ -1,4 +1,5 @@
 import BotonWhatsApp from './BotonWhatsApp'
+import Logo from './Logo'
 
 const enlaces = [
   { href: '#servicios', texto: 'Servicios' },
@@ -10,9 +11,9 @@ const enlaces = [
 export default function Navegacion() {
   return (
     <header className="bg-noche">
-      <nav aria-label="Principal" className="marco flex min-h-20 items-center justify-between gap-6">
-        <a href="#inicio" className="font-titulo text-subtitulo font-medium text-hueso">
-          Jefferson Areque
+      <nav aria-label="Principal" className="marco flex min-h-20 items-center justify-between gap-4 lg:gap-6">
+        <a href="#inicio" aria-label="Jefferson Areque, ir al inicio" className="text-hueso">
+          <Logo completo className="h-9 w-auto lg:h-12" />
         </a>
         <ul className="hidden items-center gap-8 lg:flex">
           {enlaces.map((enlace) => (

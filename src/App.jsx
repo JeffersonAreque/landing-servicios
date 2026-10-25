@@ -1,6 +1,7 @@
 import Navegacion from './components/Navegacion'
 import Hero from './components/Hero'
 import BloqueVacio from './components/BloqueVacio'
+import SobreMi from './components/SobreMi'
 
 export default function App() {
   return (
@@ -11,7 +12,7 @@ export default function App() {
         <BloqueVacio id="servicios" titulo="Servicios" fondo="papel" />
         <BloqueVacio id="como-trabajo" titulo="Cómo trabajo" fondo="papel-2" />
         <BloqueVacio id="proyectos" titulo="Proyectos que construí" fondo="noche" />
-        <BloqueVacio id="sobre-mi" titulo="Sobre mí" fondo="papel" />
+        <SobreMi />
         <BloqueVacio id="contacto" titulo="Cierre / contacto" fondo="aguajal" />
       </main>
       <BloqueVacio id="footer" titulo="Footer" fondo="noche" como="footer" />
