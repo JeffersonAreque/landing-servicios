@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.agents/
+.taste-skill/
+.playwright-mcp/
+.env
+.env.*
+*.log
+.DS_Store
+.vercel
