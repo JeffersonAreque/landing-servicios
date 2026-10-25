@@ -1,7 +1,11 @@
 import Navegacion from './components/Navegacion'
 import Hero from './components/Hero'
-import BloqueVacio from './components/BloqueVacio'
+import Servicios from './components/Servicios'
+import ComoTrabajo from './components/ComoTrabajo'
+import Proyectos from './components/Proyectos'
 import SobreMi from './components/SobreMi'
+import Contacto from './components/Contacto'
+import Footer from './components/Footer'
 
 export default function App() {
   return (
@@ -9,13 +13,13 @@ export default function App() {
       <Navegacion />
       <main>
         <Hero />
-        <BloqueVacio id="servicios" titulo="Servicios" fondo="papel" />
-        <BloqueVacio id="como-trabajo" titulo="Cómo trabajo" fondo="papel-2" />
-        <BloqueVacio id="proyectos" titulo="Proyectos que construí" fondo="noche" />
+        <Servicios />
+        <ComoTrabajo />
+        <Proyectos />
         <SobreMi />
-        <BloqueVacio id="contacto" titulo="Cierre / contacto" fondo="aguajal" />
+        <Contacto />
       </main>
-      <BloqueVacio id="footer" titulo="Footer" fondo="noche" como="footer" />
+      <Footer />
     </>
   )
 }
