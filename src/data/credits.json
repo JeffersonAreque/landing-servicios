@@ -1,0 +1,17 @@
+[
+  {
+    "id": "puerto-maldonado-rio",
+    "archivos": [
+      "src/assets/fotos/puerto-maldonado-rio-720.webp",
+      "src/assets/fotos/puerto-maldonado-rio-1200.webp"
+    ],
+    "dondeSeUsa": "Sección de contacto (cierre)",
+    "titulo": "Puerto Maldonado Madre de Dios river",
+    "autor": "Alet123",
+    "fuente": "https://commons.wikimedia.org/wiki/File:Puerto_Maldonado_Madre_de_Dios_river.jpg",
+    "licencia": "CC BY-SA 4.0",
+    "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "fecha": "2012-10-23",
+    "cambios": "Reducida de tamaño y convertida a WebP"
+  }
+]

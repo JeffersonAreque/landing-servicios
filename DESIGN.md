@@ -310,6 +310,11 @@ Los cuatro servicios, en el orden del brief, presentados **como un menú** en ve
 
 Las fotos las tomará Jefferson con el celular. **No se usan fotos de stock ni picsum.photos.**
 
+> **Excepción autorizada por Jefferson (25/10/2026):** la foto del cierre es de Wikimedia Commons con
+> licencia libre. Su crédito se ve debajo de la foto y queda registrado en `src/data/credits.json`.
+> Toda foto de terceros que se agregue debe ir igual: licencia libre, crédito visible y entrada en ese archivo.
+> Las capturas de Proyectos son de los sistemas reales funcionando con datos de prueba.
+
 | Foto pendiente | Dónde va | Proporción |
 |---|---|---|
 | Una escena de Puerto Maldonado (río, calle, puerto) | Cierre | 3:2 |

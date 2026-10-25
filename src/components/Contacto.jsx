@@ -1,9 +1,14 @@
 import { motion, useReducedMotion } from 'motion/react'
 import BotonWhatsApp from './BotonWhatsApp'
-import { FotoPendiente } from './Pendiente'
+import Foto from './Foto'
 import { aparecer } from '../lib/entrada'
+import creditos from '../data/credits.json'
+import rio720 from '../assets/fotos/puerto-maldonado-rio-720.webp'
+import rio1200 from '../assets/fotos/puerto-maldonado-rio-1200.webp'
 
 const CORREO = 'jarequechirinos16@gmail.com'
+// La licencia CC BY-SA pide nombrar al autor, enlazar la licencia y decir si se cambió la foto
+const credito = creditos.find((c) => c.id === 'puerto-maldonado-rio')
 
 // Cierre: el único campo de color entero y lo único centrado de la página (la frase de cierre).
 export default function Contacto() {
@@ -40,9 +45,26 @@ export default function Contacto() {
           </motion.div>
         </div>
 
-        <motion.div className="col-span-4 lg:col-span-6 lg:col-start-7" {...aparecer(3, reducir)}>
-          <FotoPendiente descripcion="Puerto Maldonado (río, calle o puerto)" proporcion="3:2" />
-        </motion.div>
+        <motion.figure className="col-span-4 lg:col-span-6 lg:col-start-7" {...aparecer(3, reducir)}>
+          <Foto
+            fuentes={[[rio720, 720], [rio1200, 1200]]}
+            alt="Canoas de madera en la orilla del río Madre de Dios, en Puerto Maldonado, bajo un cielo con nubes"
+            ancho={1200}
+            alto={800}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+          />
+          <figcaption className="mt-3 text-nota">
+            Río Madre de Dios, Puerto Maldonado. Foto:{' '}
+            <a href={credito.fuente} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+              {credito.autor}, Wikimedia Commons
+            </a>
+            ,{' '}
+            <a href={credito.licenciaUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
+              {credito.licencia}
+            </a>
+            . {credito.cambios}.
+          </figcaption>
+        </motion.figure>
       </div>
     </section>
   )
