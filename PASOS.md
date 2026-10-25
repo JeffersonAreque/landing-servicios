@@ -101,7 +101,7 @@ Edita en CapCut: música, tu voz o subtítulos tipo "Así se ve un sitio hecho a
 | Empiezo algo y no tengo claro qué construir | `interview-me` | "Entrevístame…" |
 | Tarea grande o que toca varios archivos | **Modo Plan** | Shift+Tab hasta "plan mode" |
 | Programar una función paso a paso con pruebas | `incremental-implementation`, `test-driven-development` | Solas, al pedir funciones |
-| Que se vea profesional y no genérico | `taste-skill` + `web-design-guidelines` + DESIGN.md | Solas, en proyectos web |
+| Que se vea profesional y no genérico | `design-taste-frontend` + `web-design-guidelines` + DESIGN.md | Solas, en proyectos web |
 | Tengo o quiero un diseño | **Figma MCP** | Pegando el enlace o pidiendo "en Figma" |
 | Verificar cómo se ve / probar la página | **Playwright MCP** | "Abre con Playwright…" |
 | Guardar y subir | Skill de commits | "Sube los cambios" |
