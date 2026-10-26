@@ -10,6 +10,12 @@ dist/
 .vercel
 __pycache__/
 
-# Skills de terceros: se reinstalan con skills-lock.json
-.claude/skills/
+# Skills de terceros: se reinstalan con skills-lock.json (la de video es nuestra y sí se guarda)
+.claude/skills/*
+!.claude/skills/video-marketing/
 .claude/settings.local.json
+
+# Video de marketing: los MP4 y las salidas se generan, no se guardan en git
+*.mp4
+video/out/
+video/public/fonts/

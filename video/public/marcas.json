@@ -1,0 +1,36 @@
+{
+  "fps": 30,
+  "fotogramas": 534,
+  "marcas": [
+    {
+      "id": "hero",
+      "llegada": 0,
+      "salida": 45,
+      "inicioTramo": 0
+    },
+    {
+      "id": "sistema",
+      "llegada": 111,
+      "salida": 165,
+      "inicioTramo": 45
+    },
+    {
+      "id": "servicios",
+      "llegada": 210,
+      "salida": 258,
+      "inicioTramo": 165
+    },
+    {
+      "id": "proyectos",
+      "llegada": 336,
+      "salida": 384,
+      "inicioTramo": 258
+    },
+    {
+      "id": "contacto",
+      "llegada": 480,
+      "salida": 534,
+      "inicioTramo": 384
+    }
+  ]
+}

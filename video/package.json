@@ -1,0 +1,27 @@
+{
+  "name": "landing-servicios-video",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "preparar": "node -e \"for (const f of ['boska-500','boska-700','onest-var']) require('fs').copyFileSync('../public/fonts/'+f+'.woff2','public/fonts/'+f+'.woff2')\"",
+    "grabar": "node grabar.mjs",
+    "estudio": "remotion studio",
+    "render": "remotion render Vertical out/video-vertical-1080x1920.mp4 && remotion render Cuadrado out/video-linkedin-1080x1080.mp4",
+    "revisar": "node revisar.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.539",
+    "@remotion/fonts": "4.0.539",
+    "playwright": "1.64.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.539"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "typescript": "^5.6.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true
+  }
+}

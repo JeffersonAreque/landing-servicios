@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* La carpeta del video (Remotion) no es parte de la web */
+@source not "../video";
 
 /* Fuentes servidas desde public/fonts (solo el subconjunto latino) */
 @font-face {
